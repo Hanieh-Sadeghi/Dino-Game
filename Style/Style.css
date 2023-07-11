@@ -5,8 +5,21 @@
 }
 
 .game{
-    width: 500px;
-    height: 200px;
+    width: 100%;
+    height: 250px;
     border: 1px solid red;
+    margin-top: 250px;
     
+}
+
+#character{
+    border: 1px solid red;
+    width: 20px; 
+    height: 40px;
+}
+
+#block{
+    border: 3px solid blue;
+    width: 20px; 
+    height: 20px; 
 }

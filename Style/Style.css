@@ -28,3 +28,13 @@
     width: 20px; 
     height: 20px; 
 }
+
+.anmitae {
+    animation: jupm 0.3s linear;
+}
+@keyframes jupm {
+    0% {top: 150px;}
+    30% {top: 100px;}
+    70% {top: 100px;}
+    100% {top: 150px;}
+}

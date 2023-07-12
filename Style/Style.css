@@ -23,12 +23,6 @@
     left: 20px;
 }
 
-#block{
-    border: 3px solid blue;
-    width: 20px; 
-    height: 20px; 
-}
-
 .anmitae {
     animation: jupm 0.3s linear;
 }
@@ -37,4 +31,24 @@
     30% {top: 100px;}
     70% {top: 100px;}
     100% {top: 150px;}
+}
+
+#block {
+    border: 3px solid blue;
+    /* background-image: ; */
+    width: 10px;
+    height: 10px;
+    position: relative;
+    top: 140px;
+    left: 500px;
+    animation: block 1s infinite linear;
+}
+
+@keyframes block {
+    0%{left: 700px;}
+    100%{left: -20px;}
+}
+
+.p{
+    text-align: center;
 }

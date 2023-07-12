@@ -41,7 +41,7 @@
     position: relative;
     top: 140px;
     left: 500px;
-    animation: block 1s infinite linear;
+    animation: block 2s infinite linear;
 }
 
 @keyframes block {
@@ -49,6 +49,17 @@
     100%{left: -20px;}
 }
 
-.p{
-    text-align: center;
+p{
+    width: 130px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background: rgb(209, 204, 204);
+    color: rgb(61, 61, 61);     
+    border-radius: 10px;
 }

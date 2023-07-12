@@ -8,18 +8,20 @@
 .game{
     width: 700px;
     height: 200px;
-    margin: auto;  
+    margin: auto; 
+    border-bottom: 2px solid rgb(112, 112, 112); 
+
 }
 
 #character{
     position: relative;
     top: 157px;
-    left: 20px;
+    left: 10px;
 }
 
 svg{
-    width: 50px; 
-    height: 40px;
+    width: 55px; 
+    height: 45px;
 }
 
 .animate {
@@ -34,13 +36,22 @@ svg{
 }
 
 #tree {
-    border: 3px solid blue;
-    width: 10px;
-    height: 10px;
     position: relative;
-    top: 140px;
-    left: 500px;
+    top: 111px;
+    left: 300px;
     animation: block 2s infinite linear;
+}
+
+img{
+    width: 40px;
+    height: 45px;   
+}
+
+.TheSky img {
+    /* border: 1px solid red; */
+    position: relative;
+    /* top: 111px; */
+    left: 350px;
 }
 
 @keyframes block {
@@ -57,8 +68,5 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    background: rgb(209, 204, 204);
-    color: rgb(61, 61, 61);     
-    border-radius: 10px;
+    font-size: 30px; 
 }

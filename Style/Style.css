@@ -59,6 +59,10 @@ img{
     100%{left: -20px;}
 }
 
+.text{
+   border: 1px solid red; 
+}
+
 p{
     width: 130px;
     height: 50px;

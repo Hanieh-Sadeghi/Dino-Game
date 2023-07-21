@@ -1,26 +1,26 @@
-let character = document.getElementById("character");
 let tree = document.getElementById("tree");
+
+const treeTypes = ["Icon/cactus.png", "Icon/cactus(1).png", "Icon/c2.png"];
+let treeContainer = document.getElementById("trees-container");
+
+for (let i = 0; i < 2; i++) {
+    const treeElement = document.createElement("img");
+    const treeType = treeTypes[Math.floor(Math.random() * treeTypes.length)];
+    treeElement.setAttribute("src", treeType);
+    treeElement.setAttribute("alt", "Tree " + (i + 1));
+    treeElement.style.width = "40px";
+    treeElement.style.height = "45px";
+    treeElement.style.margin = "0 5px";
+
+    treeContainer.appendChild(treeElement);
+}
+
+
+// دیگر کدهای جاوااسکریپت شما
+let character = document.getElementById("character");
 let counter = 0;
 
-
-function createTree() {
-    const treeTypes = ["images/tree1.png", "tree2.png", "tree3.png"];
-    for (let i = 0; i < 2; i++) {
-        const treeHeight = Math.floor(Math.random() * 50) + 100; // ارتفاع تصادفی بین 100 و 150 پیکسل
-        const treeLeft = Math.floor(Math.random() * 100) + 1; // موقعیت افقی تصادفی بین 1 و 100 درصد
-        const treeType = treeTypes[Math.floor(Math.random() * treeTypes.length)];
-
-        const tree = document.createElement("img");
-        tree.setAttribute("src", treeType);
-        tree.setAttribute("class", "tree");
-        tree.style.height = treeHeight + "px";
-        tree.style.left = treeLeft + "%";
-
-        const treesContainer = document.getElementById("trees-container");
-        treesContainer.appendChild(tree);
-    }
-}
- // افزودن رویداد کلید فشرده‌شده به صفحه
+// افزودن رویداد کلید فشرده‌شده به صفحه
 document.addEventListener("keydown", function(event) {
     if (event.keyCode === 32) {
         jump();
@@ -35,22 +35,19 @@ function jump() {
     }, 300);
 }
 
-let checkDead = setInterval(function (){
+let checkDead = setInterval(function () {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-    let treeLeft = parseInt(window.getComputedStyle(tree).getPropertyValue("left"));
-    if (treeLeft < 20 && treeLeft > -30 && characterTop >= 130) {
-        tree.style.animation = "none";
-        alert("Game Over. Score : " + Math.floor(counter / 100));
-        counter = 0;
-        tree.style.animation = "block 1s infinite linear";
-    } else {
-        counter++;
-        document.getElementById("scorespan").innerHTML = Math.floor(counter / 100);
+    let trees = document.querySelectorAll("#trees-container img"); // بازیابی تمام تگ‌های img داخل div با شناسه "trees-container"
+    for (let i = 0; i < trees.length; i++) {
+        let treeLeft = parseInt(window.getComputedStyle(trees[i]).getPropertyValue("left"));
+        if (treeLeft < 20 && treeLeft > -30 && characterTop >= 130) {
+            trees[i].style.animation = "none";
+            alert("Game Over. Score : " + Math.floor(counter / 100));
+            counter = 0;
+            trees[i].style.animation = "block 1s infinite linear";
+        } else {
+            counter++;
+            document.getElementById("scorespan").innerHTML = Math.floor(counter / 100);
+        }
     }
 }, 10);
-
-
-        // ایجاد چندتا درخت رندوم
-for (let i = 0; i < 5; i++) {
-    createTree();
-}

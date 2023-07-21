@@ -10,17 +10,19 @@ body {
     overflow: hidden;
 }
   
-.game{
+.game {
     width: 700px;
     height: 200px;
-    margin: auto; 
-    border-bottom: 2px solid rgb(112, 112, 112); 
-
+    margin: auto;
+    border-bottom: 2px solid rgb(112, 112, 112);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
-#character{
+#character {
     position: relative;
-    top: 157px;
+    top: 0;
     left: 10px;
 }
 
@@ -31,31 +33,44 @@ svg{
 
 .animate {
     animation: jump 0.3s linear;
-}
-
-@keyframes jump {
-    0% {top: 150px;}
-    30% {top: 100px;}
-    70% {top: 100px;}
-    100% {top: 150px;}
-}
-
-#tree {
-    position: relative;
-    top: 111px;
-    left: 300px;
-    animation: block 2s infinite linear;
-}
+}  
 
 img{
     width: 40px;
     height: 45px;   
 }
-
+/* 
 .TheSky img {
     position: relative;
     left: 350px;
+} */
+
+#trees-container {
+    /* border: 1px solid rgb(195, 255, 0); */
+    display: flex;
+    align-items: flex-end;
+    /* width: 10px;
+    height: 45px;  */
 }
+
+#trees-container img {
+    /* border: 1px solid red; */
+    /* width: 10px; */
+    
+    margin: 0.0 50px; /* اضافه کردن فاصله بین درخت‌ها */
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+} 
 
 @keyframes block {
     0%{left: 700px;}
@@ -67,10 +82,10 @@ img{
    font-size: 18px;
    font-family: 'Rubik', sans-serif;
 }
-
+/* 
 .text h3 {
    
-}
+} */
 
 p{
     width: 130px;
@@ -82,4 +97,12 @@ p{
     justify-content: center;
     align-items: center;
     font-size: 30px; 
+}
+
+.tree {
+    position: absolute;
+    /* bottom: 4; */
+    top: 157px;
+    left: 10px;
+
 }

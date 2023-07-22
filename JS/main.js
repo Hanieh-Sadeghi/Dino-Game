@@ -16,11 +16,9 @@ for (let i = 0; i < 2; i++) {
 }
 
 
-// دیگر کدهای جاوااسکریپت شما
 let character = document.getElementById("character");
 let counter = 0;
 
-// افزودن رویداد کلید فشرده‌شده به صفحه
 document.addEventListener("keydown", function(event) {
     if (event.keyCode === 32) {
         jump();
@@ -37,7 +35,7 @@ function jump() {
 
 let checkDead = setInterval(function () {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-    let trees = document.querySelectorAll("#trees-container img"); // بازیابی تمام تگ‌های img داخل div با شناسه "trees-container"
+    let trees = document.querySelectorAll("#trees-container img"); 
     for (let i = 0; i < trees.length; i++) {
         let treeLeft = parseInt(window.getComputedStyle(trees[i]).getPropertyValue("left"));
         if (treeLeft < 20 && treeLeft > -30 && characterTop >= 130) {
